@@ -1,0 +1,40 @@
+{
+  "name": "cocodas-fe",
+  "description": "cocodas fe is cocodas application frontend with angular",
+  "main": "app.js",
+  "authors": [
+    "wilkinsleung"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "angular",
+    "css",
+    "html",
+    "bootstrap"
+  ],
+  "homepage": "https://github.com/wilkinsleung0712/cocodas-fe",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.5.0",
+    "angular-cookies": "^1.6.0",
+    "angular-bootstrap": "^2.3.1",
+    "angular-ui-router": "^0.2.15",
+    "jquery": "2.2.0",
+    "bootstrap": "~3.3.6",
+    "font-awesome": "~4.5.0",
+    "jquery-ui": "^1.12.1",
+    "ngstorage": "^0.3.11",
+    "ng-idle": "angular-idle#^1.3.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wilkinsleung0712/cocodas-fe/"
+  }
+}

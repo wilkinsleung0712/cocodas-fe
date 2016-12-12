@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Bare - Start Bootstrap Template</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+    <link href="css/layout/layout.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body ng-app="cocodas" ng-controller="MainCtrl">
+    <nav class="navbar navbar-inverse sidebar navbar-fixed-top" role="navigation">
+        <div class="container-fluid">
+        	<!-- Brand and toggle get grouped for better mobile display -->
+    		<div class="navbar-header">
+    			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-sidebar-navbar-collapse-1">
+    				<span class="sr-only">Toggle navigation</span>
+    				<span class="icon-bar"></span>
+    				<span class="icon-bar"></span>
+    				<span class="icon-bar"></span>
+    			</button>
+    			<a class="navbar-brand" href="#">Brand</a>
+    		</div>
+    		<!-- Collect the nav links, forms, and other content for toggling -->
+    		<div class="collapse navbar-collapse" id="bs-sidebar-navbar-collapse-1">
+    			<ul class="nav navbar-nav">
+    				<li class="active"><a href="#">Home<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
+    				<li ><a href="#">Topic<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-user"></span></a></li>
+    				<!-- <li ><a href="#">Topic<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-envelope"></span></a></li> -->
+    				<li class="dropdown">
+    					<a href="#" class="dropdown-toggle" data-toggle="dropdown">Topic<span class="caret"></span><span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-cog"></span></a>
+    					<ul class="dropdown-menu forAnimate" role="menu">
+    						<!-- <li>
+                  <a href="#addTopic" ui-sref="addTopic">
+                      <i class="glyphicon glyphicon-plus"></i>AddTopic
+                  </a>
+                </li> -->
+    						<li><a href="#">Another action</a></li>
+    						<li><a href="#">Something else here</a></li>
+    					</ul>
+    				</li>
+    			</ul>
+    		</div>
+    	</div>
+    </nav>
+    <div class="main">
+    <!-- Content Here -->
+    <!-- Page Content -->
+    <div id="content-wrapper">
+          <div class="page-content row">
+              <div ui-view idle></div>
+        </div><!-- End Page Content -->
+
+
+    </div>
+    </div>
+
+    <!-- jQuery Version 1.11.1 -->
+    <script src="components/jquery/dist/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="components/bootstrap/dist/js/bootstrap.js"></script>
+    <!-- Angular -->
+    <script src="components/angular/angular.js"></script>
+    <script src="components/angular-bootstrap/ui-bootstrap.js"></script>
+    <script src="components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="components/angular-http/angular-http.js"></script>
+    <script src="components/angular-cookies/angular-cookies.js"></script>
+    <script src="components/ng-idle/angular-idle.js"></script>
+    <script src="js/app/app.js"></script>
+    <script src="js/app/route.js"></script>
+    <!-- directives -->
+    <script src="js/app/directives/list-topics.js"></script>
+    <script src="js/app/directives/view-topic.js"></script>
+    <script src="js/app/directives/user-login.js"></script>
+    <script src="js/app/directives/add-topic.js"></script>
+    <script src="js/app/directives/idle.js"></script>
+    <!-- services -->
+    <script src="js/app/services/topics-service.js"></script>
+    <script src="js/app/services/authenticate-service.js"></script>
+    <!-- controllers -->
+    <script src="js/app/controllers/main-ctrl.js"></script>
+    <script>
+
+        (function($){
+        function htmlbodyHeightUpdate(){
+            var height3 = $( window ).height()
+    		var height1 = $('.nav').height()+50
+    		height2 = $('.main').height()
+    		if(height2 > height3){
+    			$('html').height(Math.max(height1,height3,height2)+10);
+    			$('body').height(Math.max(height1,height3,height2)+10);
+    		}
+    		else
+    		{
+    			$('html').height(Math.max(height1,height3,height2));
+    			$('body').height(Math.max(height1,height3,height2));
+    		}
+
+    	}
+    	$(window).ready(function () {
+    		htmlbodyHeightUpdate()
+    		$( window ).resize(function() {
+    			htmlbodyHeightUpdate()
+    		});
+    		$( window ).scroll(function() {
+    			height2 = $('.main').height()
+      			htmlbodyHeightUpdate()
+    		});
+    	});
+
+        }(jQuery));
+</script>
+
+</body>
+
+</html>

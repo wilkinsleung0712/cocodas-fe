@@ -1,0 +1,22 @@
+<div class="container">
+  <form>
+    <div class="form-group">
+      <label for="formGroupExampleInput">Topic Titlte</label>
+          <input type="text" class="form-control" id="formGroupExampleInput" ng-disabled="isEditSelected" ng-model="selectedTopic.topicTitle" placeholder="TopicTitle input">
+    </div>
+
+    <div class="form-group">
+      <label for="formGroupExampleInput2">Topic Description</label>
+          <input type="text" class="form-control" id="formGroupExampleInput2" ng-disabled="isEditSelected" ng-model="selectedTopic.topicDescription" placeholder="TopicDescription input">
+    </div>
+      <label for="formGroupExampleInput2">Date </label> {{selectedTopic.createdDate | date:medium}}
+      <div class="form-group">
+        <button class="btn btn-success pull-right" ng-show="isEditSelected" ng-click="backSelectedTopic()">Back</button>
+        <button class="btn btn-warning pull-right" ng-hide="isEditSelected" ng-click="cancelSelectedTopic()">Cancel</button>
+        <button class="btn btn-danger pull-right control-form-btn" ng-show="isEditSelected" ng-click="deleteSelectedTopic(selectedTopic)">Delete</button>
+        <button class="btn btn-success pull-right control-form-btn" ng-hide="isEditSelected" ng-click="saveSelectedTopic(selectedTopic)">Save</button>
+        <button class="btn btn-primary pull-right control-form-btn" ng-click="editSelectedTopic()">Edit</button>
+      </div>
+  </form>
+
+</div>

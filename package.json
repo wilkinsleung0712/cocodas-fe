@@ -1,0 +1,30 @@
+{
+  "name": "cocodas-fe",
+  "version": "1.0.0",
+  "description": "cocodas fe is cocodas application frontend with angular",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wilkinsleung0712/cocodas-fe.git"
+  },
+  "keywords": [
+    "angular",
+    "css",
+    "html",
+    "bootstrap"
+  ],
+  "author": "wilkinsleung",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wilkinsleung0712/cocodas-fe/issues"
+  },
+  "homepage": "https://github.com/wilkinsleung0712/cocodas-fe#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-connect": "^5.0.0",
+    "gulp-watch": "^4.3.11"
+  }
+}

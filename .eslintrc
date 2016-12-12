@@ -1,0 +1,14 @@
+{
+  "extends": [
+    "eslint-config-airbnb"
+  ],
+  "env": {
+    "node": true,
+    "es6": true
+  },
+  "rules": {
+    "comma-dangle": 0,
+    "prefer-template": 1,
+    "no-multi-spaces": 0
+  }
+}
