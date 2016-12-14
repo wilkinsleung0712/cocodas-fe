@@ -1,0 +1,55 @@
+<div class="container">
+  <form class="form-horizontal" novalidate>
+    <fieldset>
+      <div id="legend">
+        <legend class="text-danger">
+          Register User Form
+        </legend>
+      </div>
+      <ng-form name="registerForm">
+        <div class="form-group" ng-class="{ 'has-error' : registerForm.username.$invalid && registerForm.username.$dirty}">
+          <label class="col-md-2 control-label" for="username">Username</label>
+          <div class="col-md-10">
+            <input id="username" name="username" type="text" placeholder="" class="form-control input-md" ng-model="userRegister.username" required>
+            <p class="help-block" ng-show="registerForm.username.$invalid && registerForm.username.$dirty">Valid User Name Required</p>
+          </div>
+        </div>
+        <div class="form-group" ng-class="{ 'has-error' : registerForm.firstName.$invalid && registerForm.firstName.$dirty}">
+          <label class="col-md-2 control-label" for="firstName">firstName</label>
+          <div class="col-md-10">
+            <input id="firstName" name="firstName" type="text" placeholder="" class="form-control input-md" ng-model="userRegister.firstName" required>
+            <p class="help-block" ng-show="registerForm.firstName.$invalid && registerForm.firstName.$dirty">Valid User Name Required</p>
+          </div>
+        </div>
+        <div class="form-group" ng-class="{ 'has-error' : registerForm.lastName.$invalid && registerForm.lastName.$dirty}">
+          <label class="col-md-2 control-label" for="lastName">lastName</label>
+          <div class="col-md-10">
+            <input id="lastName" name="lastName" type="text" placeholder="" class="form-control input-md" ng-model="userRegister.lastName" required>
+            <p class="help-block" ng-show="registerForm.lastName.$invalid && registerForm.lastName.$dirty">Valid User Name Required</p>
+          </div>
+        </div>
+        <div class="form-group" ng-class="{ 'has-error' : registerForm.password.$invalid && registerForm.password.$dirty}">
+          <label class="col-md-2 control-label" for="password">Password</label>
+          <div class="col-md-10">
+            <input id="password" name="password" type="text" class="form-control input-md" ng-model="userRegister.password" required>
+            <p class="help-block" ng-show="registerForm.password.$invalid && registerForm.password.$dirty">Valid User Name Required</p>
+          </div>
+        </div>
+        <div class="form-group" ng-class="{ 'has-error' : registerForm.confirmpassword.$invalid && registerForm.confirmpassword.$dirty}" >
+          <label class="col-md-2 control-label" for="confirmPassword">Confirm Password</label>
+          <div class="col-md-10">
+            <input id="confirmpassword" name="confirmpassword" type="text" class="form-control input-md" ng-model="userRegister.confirmpassword"
+                   compare-to="userRegister.password" required>
+            <p class="help-block" ng-show="registerForm.confirmpassword.$invalid && registerForm.confirmpassword.$dirty">Password do not match</p>
+          </div>
+        </div>
+      </ng-form>
+      <div class="form-group">
+        <div class="input-group col-md-10 col-md-offset-2 controls">
+          <button type="submit" class="btn btn-success" ng-click="register(userRegister)" style="margin-right:5px;" ng-disabled="!registerForm.$valid">Register</button>
+          <a href="#/user/register"  ui-sref="userRegister" class="btn btn-warning">Cancel</a>
+        </div>
+      </div>
+    </fieldset>
+  </form>
+</div>

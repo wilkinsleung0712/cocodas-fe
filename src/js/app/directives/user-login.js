@@ -24,8 +24,4 @@ function userCtrl($scope,$log,$rootScope,$state,Idle,authenticateService){
         }
       });
   };
-  $scope.register = function(username,password){
-
-  };
-
 }

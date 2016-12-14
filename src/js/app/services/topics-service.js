@@ -16,6 +16,7 @@ function TopicService($log,$http,$q){
       });
       return deferred.promise;
   }
+
   self.getTopic = function(topicId){
     function topicMatchesParam(topic){
       return topic.id == topicId;

@@ -38,5 +38,10 @@ angular.module('cocodas').config(['$stateProvider','$urlRouterProvider',function
     .state('addTopic',{
       url:'/addTopic',
       template:'<add-topic></add-topic>'
+    })
+    .state('userRegister',{
+      url:'/user/register',
+      template:'<user-register></user-register>'
     });
+
 }]);

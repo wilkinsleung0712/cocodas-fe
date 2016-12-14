@@ -3,8 +3,8 @@ cocodas.config(['$httpProvider','KeepaliveProvider', 'IdleProvider',config]);
 cocodas.run(run);
 function config($httpProvider,KeepaliveProvider, IdleProvider){
   // setting timeout value
-  IdleProvider.idle(5);
-  IdleProvider.timeout(5);
+  IdleProvider.idle(20);
+  IdleProvider.timeout(30);
   KeepaliveProvider.interval(10);
 
   $httpProvider.interceptors.push(['$q', '$cookies', '$injector',myHttpInterceptor]);
@@ -67,7 +67,7 @@ function run($rootScope, $http, $location, $cookies,$log,Idle,$state) {
         // redirect to login page if not logged in and trying to access a restricted page
         $rootScope.$on('$locationChangeStart', function (event, next, current) {
             // used to define a list of public page that can be used without authentication
-            var publicPages = ['/user/login'];
+            var publicPages = ['/user/login','/user/register'];
             var restrictedPage = publicPages.indexOf($location.path()) === -1;
             if (restrictedPage && !$cookies.get('currentUserToken')) {
                  $location.path('/user/login');

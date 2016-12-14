@@ -36,4 +36,17 @@ function authenticateService($log,$http,$rootScope,$q,$cookies,$timeout){
       });
       return deferred.promise;
   };
+
+  self.register = function(registerUserDetail){
+    var deferred = $q.defer();
+    $http.post(baseUri + 'register',registerUserDetail)
+      .then(function(response){
+        $log.info('register successful');
+        deferred.resolve(response.data);
+      },function(errorResponse){
+        $log.error('register failed');
+        deferred.reject(errorResponse);
+      });
+      return deferred.promise;
+  }
 }
