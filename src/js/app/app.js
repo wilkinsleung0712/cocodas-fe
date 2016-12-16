@@ -3,9 +3,9 @@ cocodas.config(['$httpProvider','KeepaliveProvider', 'IdleProvider',config]);
 cocodas.run(run);
 function config($httpProvider,KeepaliveProvider, IdleProvider){
   // setting timeout value
-  IdleProvider.idle(20);
-  IdleProvider.timeout(30);
-  KeepaliveProvider.interval(10);
+  IdleProvider.idle(180);
+  IdleProvider.timeout(5);
+  KeepaliveProvider.interval(180);
 
   $httpProvider.interceptors.push(['$q', '$cookies', '$injector',myHttpInterceptor]);
   // register the interceptor as a service

@@ -1,5 +1,5 @@
-angular.module('cocodas').service('topicService',['$log','$http','$q',TopicService]);
-function TopicService($log,$http,$q){
+angular.module('cocodas').service('topicService',['$log','$http','$q','$cookies',TopicService]);
+function TopicService($log,$http,$q,$cookies){
   var self = this;
   var baseReqUri = 'http://localhost:8080/topic/';
   var baseResourceUri = 'http://localhost:8080/rest/';
@@ -66,6 +66,8 @@ function TopicService($log,$http,$q){
     //populate topic extra info from $localStorage
     // topic.username = $localStorage.currentUser.username;
     // topic.userId = $localStorage.currentUser.username;
+    topic.username = $cookies.get('currentUserName');
+
     var deferred = $q.defer();
     $http.post(baseResourceUri + 'topic/add',topic).then(function(response){
       $log.info('create success');
